@@ -1,11 +1,9 @@
-// components/Select.tsx
 import React from 'react';
 
 type SelectProps = {
   label: string;
   options: string[];
   value: string;
-  // eslint-disable-next-line no-unused-vars
   onChange: (value: string) => void;
 };
 

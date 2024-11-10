@@ -1,13 +1,19 @@
 // types/quiz.ts
 
 export type UserInfo = {
-    name: string;
-    ageGroup: string;
-    difficulty: string;
+    fullName: string;
+    category: string
   };
 
 export type Question = {
-    question: string;
-    options: string[];
-    correctAnswer: string;
+    id: string;
+    name: string;
+    questions: {
+      id:string;
+      question: string;
+      options: string[];
+      correctAnswer: string;
+      timeLimit: number;
+      selectedOption?: string;
+    } []
   };

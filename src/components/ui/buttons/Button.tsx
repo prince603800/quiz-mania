@@ -1,4 +1,4 @@
-// components/Button.tsx
+
 import React from 'react';
 
 type ButtonProps = {
@@ -10,9 +10,9 @@ type ButtonProps = {
 };
 
 const Button: React.FC<ButtonProps> = ({ children, onClick, variant = 'primary', disabled = false, className = '' }) => {
-  const baseStyles = 'px-4 py-2 rounded font-semibold';
+  const baseStyles = 'px-6 py-2 rounded font-medium';
   const variantStyles =
-    variant === 'primary' ? 'bg-primary text-white hover:bg-primary' : 'bg-gray-200 text-gray-700';
+    variant === 'primary' ? 'bg-primary text-white hover:bg-primary' : 'border-[1px] border-primary text-primary';
 
   return (
     <button

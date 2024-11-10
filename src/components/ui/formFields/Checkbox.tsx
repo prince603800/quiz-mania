@@ -1,7 +1,13 @@
 import { Checkbox as CheckboxField} from '@headlessui/react';
 import { checkedImage } from '../../../assets/images';
 
-export default function Checkbox({label, checked, setChecked}) {
+interface Props {
+  label: string;
+  checked: boolean;
+  setChecked: (isChecked:boolean) => void;
+}
+
+export default function Checkbox({label, checked, setChecked}:Props) {
   return (
     <div className='flex items-center'>
       <CheckboxField

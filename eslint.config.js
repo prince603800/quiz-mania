@@ -12,11 +12,14 @@ export default [
   ...tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
   { rules: {
-    'no-unused-vars': 'warn',
+    'no-unused-vars': 'off', // Disable the base rule
+    '@typescript-eslint/no-unused-vars': [
+      'warn',
+      { vars: 'all', args: 'after-used', ignoreRestSiblings: true, varsIgnorePattern: '^_' },
+    ],
     'react/prop-types': 'off', // Disable prop-types as we use TypeScript
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-explicit-any': 'warn',
-    '@typescript-eslint/no-unused-vars': ['warn'], // Warn on unused variables
     'react/react-in-jsx-scope': 'off', // Disable the rule requiring React in scope,
     'quotes': ['error', 'single'], // Enforce single quotes
     'semi': ['error', 'always'], // Require semicolons
@@ -29,8 +32,6 @@ export default [
       { blankLine: 'always', prev: 'function', next: '*' }, // Require a blank line after function declarations
       { blankLine: 'never', prev: ['block'], next: ['block'] }, // No extra line between blocks
       { blankLine: 'never', prev: ['class'], next: ['class'] }, // No extra line between classes
-      // { blankLine: 'never', prev: ['var', 'let', 'const'], next: ['var', 'let', 'const'] }, // No extra line between variable declarations
-      // { blankLine: 'never', prev: 'function', next: 'function' }, // No extra line between function declarations
     ],
     // Disallow console statements
     'no-console': 'error', // Disallow console statements
